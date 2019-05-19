@@ -1,0 +1,9 @@
+{% extends 'bootstrap/base.html' %}
+
+
+{% block content %}
+<h1>{{name}}</h1>
+<div class="jumbotron">
+    {{ data.to_html(classes="table table-striped table-responsive") | safe}}
+</div>
+{% endblock %}

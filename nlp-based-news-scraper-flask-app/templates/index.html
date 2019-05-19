@@ -1,0 +1,29 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block content %}
+<div class="text-center">
+    <div class="jumbotron">
+        <h1 class="display-3">Economic Times of India News Scraper</h1>
+        <p class="lead">Enter the section url you want to scrap from https://economictimes.indiatimes.com.</p>
+        <hr class="my-4">
+        <p>Eg. for scraping economic indicators news : type 'news/economy/indicators' and enter</p>
+        <p> Other options :
+            'news/economy/policy',
+            'news/economy/finance',
+            'news/economy/agriculture',
+            'news/economy/foreign-trade',
+            'news/economy/infrastructure'</p>
+        <p>Output : Article Headline,article and date as a csv.</p>
+        <form class="form-inline" method="POST" action="{{ url_for('scrap')}}">
+            <div class="form-group">
+                <label for="news_category">https://economictimes.indiatimes.com/</label>
+            </div>
+            <div class="form-group mx-sm-3 mb-2">
+                <input class="form-control" id="news_category" placeholder="news/economy/indicators" type="text"
+                name="news-category">
+            </div>
+            <button class="btn btn-primary mb-2" type="submit" >Scrap it!</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
